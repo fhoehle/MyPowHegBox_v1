@@ -1,5 +1,5 @@
---- Makefile.orig	2013-10-31 09:39:28.235210376 +0100
-+++ Makefile	2013-10-31 10:38:12.475802960 +0100
+--- Makefile.orig	2013-10-31 14:39:14.543199769 +0100
++++ Makefile	2013-10-31 14:39:48.482555147 +0100
 @@ -3,7 +3,7 @@
  COMPILER=gfortran
  ## Choose PDF: native,lhapdf
@@ -9,7 +9,15 @@
  #Choose Analysis: none, B-or-D, top
  ## default analysis may require FASTJET package, that has to be installed separately (see below)
  ANALYSIS=top
-@@ -65,7 +65,7 @@
+@@ -23,6 +23,7 @@
+ OPT=-O2
+ ## For debugging uncomment the following
+ #DEBUG= -ggdb -pg
++LIBS=-lz
+ endif
+ 
+ ifeq ("$(COMPILER)","g77")
+@@ -65,7 +66,7 @@
  ifeq ("$(PDF)","lhapdf")
  LHAPDF_CONFIG=lhapdf-config
  PDFPACK=lhapdfif.o
@@ -18,7 +26,7 @@
  ifeq  ("$(STATIC)","-static") 
  ## If LHAPDF has been compiled with gfortran and you want to link it statically, you have to include
  ## libgfortran as well. The same holds for libstdc++. 
-@@ -92,8 +92,8 @@
+@@ -92,8 +93,8 @@
  else
  ifeq ("$(ANALYSIS)","top")
  FASTJET_CONFIG=$(shell which fastjet-config)
