@@ -13,5 +13,5 @@
 ####
 #export LD_LIBRARY_PATH=$lhapdfLib:$LD_LIBRARY_PATH
 #echo $LD_LIBRARY_PATH
-
-
+export PATH=$PWD/bin:$PATH
+export LOCAL_POWHEGDIR=$PWD

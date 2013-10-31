@@ -31,7 +31,8 @@ if [ "X$1" == "X" ]; then
   ## make
   cd POWHEG-BOX/hvq
   patch < ../../../cmsswPowHegBox_1_4.patch
-  make    
+  make   
+  cp testrun-tdec-lhc/powheg.input ../../example_powheg.input 
 else if [ "X$1" == "Xclean" ]; then
   echo -e "cleaning ..."
   #chmod -R u+w $installDir
