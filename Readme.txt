@@ -1,7 +1,23 @@
+Using PowHeg box with cmssw
+
+Installation:
+  ./install.sh
+
+Before using Powheg:
+  source setup.sh
+
+Create New Powheg Job:
+  newPowHeg_job.sh jobName
+  Don't forget to adapt powheg input file
+
+Start job
+  startPowHeg_job.sh jobInputFilename-powheg.input
+
+
 ##http://cms-project-generators.web.cern.ch/cms-project-generators/slc5_ia32_gcc434/powheg/V1.0/src/powhegboxv1.4_Feb2012.tar.gz
 ##~fhohle/public/powhegboxv1.4_Feb2012.tar.gz
 # use cmssw pdfset
-export LIBRARY_PATH=${LIBRARY_PATH}:/afs/cern.ch/cms/slc5_amd64_gcc434/external/lhapdf/5.6.0-cms4/lib
+#export LIBRARY_PATH=${LIBRARY_PATH}:/afs/cern.ch/cms/slc5_amd64_gcc434/external/lhapdf/5.6.0-cms4/lib
 ## Begin Makefile changes
 ## change the pdf settings to
 ## PDF=lhapdf
@@ -9,7 +25,7 @@ export LIBRARY_PATH=${LIBRARY_PATH}:/afs/cern.ch/cms/slc5_amd64_gcc434/external/
 ##LIBSLHAPDF= -Wl,-rpath,/afs/cern.ch/cms/slc5_amd64_gcc434/external/lhapdf/5.6.0-cms4/lib -L/afs/cern.ch/cms/slc5_amd64_gcc434/external/lhapdf/5.6.0-cms4/lib -lLHAPDF
 ## End Makefile changes
 # use CMSSW fastjet
-export PATH=${PATH}:/afs/cern.ch/cms/slc5_amd64_gcc434/external/fastjet/2.4.4-cms/bin
-export LIBRARY_PATH=${LIBRARY_PATH}:/afs/cern.ch/cms/slc5_amd64_gcc434/external/fastjet/2.4.4-cms/lib
-export CPLUS_INCLUDE_PATH=${CPLUS_INCLUDE_PATCH}:/afs/cern.ch/cms/slc5_amd64_gcc434/external/fastjet/2.4.4-cms/include
+#export PATH=${PATH}:/afs/cern.ch/cms/slc5_amd64_gcc434/external/fastjet/2.4.4-cms/bin
+#export LIBRARY_PATH=${LIBRARY_PATH}:/afs/cern.ch/cms/slc5_amd64_gcc434/external/fastjet/2.4.4-cms/lib
+#export CPLUS_INCLUDE_PATH=${CPLUS_INCLUDE_PATCH}:/afs/cern.ch/cms/slc5_amd64_gcc434/external/fastjet/2.4.4-cms/include
 ##make pwhg_main
